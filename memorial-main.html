@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>픽셔널 메모리얼</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../image/favicon.ico">
+</head>    
+<body>
+    <header>
+        <a href="../fictional-landing.html">
+            <img src="imagge/한글로고.svg" alt="픽셔널-메모리얼-로고">
+        </a>
+        <div class="menu">
+            <button disabled>Memorial</button>
+            <a href="character/add-character.html">
+                <button>Add my character!</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <!-- <video autoplay muted loop class="background-video">
+            <source src="imagge/새새동영상.mp4" type="video/mp4"></video> -->
+    <div class="nav-contentsgrid">
+        <section>
+            <div class="nav">
+                <div class="nav-bottom">
+                    <p>죽음의 종류</p>
+                    <hr class="horizontal-line">
+                    <div class="filter-button filter-button3" data-filter="all">
+                        <p>전체보기</p>
+                    </div>
+                    <hr class="horizontal-line">
+                    <div class="filter-button filter-button4" data-filter="suicide">
+                        <p>자살</p>
+                    </div>
+                    <div class="filter-button filter-button5" data-filter="sacrifice">
+                        <p>희생사</p>
+                    </div>
+                    <div class="filter-button filter-button6" data-filter="murder">
+                        <p>살해</p>
+                    </div>
+                    <div class="filter-button filter-button7" data-filter="illness">
+                        <p>병사</p>
+                    </div>
+                    <div class="filter-button filter-button8" data-filter="actorDeath">
+                        <p>배우의 사망</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="printButton" class="print-btn">
+                <img src="imagge/프린트버튼.svg" alt="프린트버튼">
+            </div>
+        </section>
+        <!-- <button id="printButton" class="print-button hidden">
+            <img src="imagge/프린트버튼.svg" alt="프린트버튼">
+        </button> -->
+    <div class="grid-container">
+        <div class="row-1">
+            <div class="character" id="guido" data-filter="sacrifice" data-modal-content='{
+                "characterName": "귀도 오르피스",
+                "deathType": "희생사",
+                "deathReason": "제2차 세계 대전 중 나치의 유대인 수용소를 배경으로 한 영화이다. 아버지 귀도는 아들 조슈아를 보호하기 위해 수용소 생활을 \"게임\"으로 꾸민다. 아들이 두려움을 느끼지 않도록 천진난만한 이야기를 들려주며 함께 살아남으려 노력한다. 영화가 끝날 무렵, 귀도는 아들을 숨기고 나치에게 발각되어 총살당하지만, 아들은 끝까지 숨은 덕분에 살아남는다. 수용소를 해방한 미군 탱크를 보고 아들은 자신이 게임에서 승리했다고 믿는다. 시간이 흘러 아들은 아버지의 희생 덕분에 살아남았음을 깨달으며 영화가 끝나게 된다.",
+                "workName": "인생은 아름다워",
+                "releaseDate": "1999년 3월 16일",
+                "image": "imagge/귀도modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/귀도.svg" alt="귀도 오피레체">
+                <a>인생은 아름다워 귀도 오르피스</a>
+                <a class="engname">Life Is Beautiful Guido Orefice</a>
+            </div>
+            <div class="character" id="dars" data-filter="sacrifice" data-modal-content='{
+                "characterName": "다스베이더",
+                "deathType": "희생사",
+                "deathReason": "악당에 의해서 본인의 아내가 죽은것을 날조당하고, 악역으로 살다가 , 자신의 아들을 다시만나서, 아들을 구하고 사망. 다스시디어스라는 악의군주로 부터 지켜주려고. 다스베이더가 대신싸우고 사망. ",
+                "workName": "스타워즈",
+                "releaseDate": "1999년 3월 16일",
+                "image": "imagge/귀도modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/귀도.svg" alt="다스 베이더">
+                <a>스타워즈 다스베이더</a>
+                <a class="engname">Star Wars Darth Vader</a>
+            </div>
+            <div class="character" id="matsuko" data-filter="murder" data-modal-content='{
+                "characterName": "카와지리 마츠코",
+                "deathType": "타살",
+                "deathReason": "일평생 불행한 일만 당하다 노숙자를 괴롭히는 중학생들에게 살인당한다.",
+                "workName": "혐오스런 마츠코의 일생",
+                "releaseDate": "2007년 4월 12일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>혐오스런 마츠코의 일생 카와지리 마츠코</a>
+                <a class="engname">Memories of Matsuko Kawajiri matsuko</a>
+            </div>
+            <!-- <div class="blank"></div> -->
+            <div class="character" id="miyazono" data-filter="illness" data-modal-content='{
+                "characterName": "미야조노 카오리",
+                "deathType": "병사",
+                "deathReason": "트라우마가 있는 주인공을 극복시켜줬는데, 난치병이 악화되어 사망. 죽을 당시 많은 시청자들이 충격에 빠졌다.",
+                "workName": "4월은 너의 거짓말",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>4월은 너의 거짓말 미야조노 카오리</a>
+                <a class="engname">-</a>
+            </div>
+            <div class="character" id="babra" data-filter="murder" data-modal-content='{
+                "characterName": "바바라 홀랜드",
+                "deathType": "살해",
+                "deathReason": "트라우마가 있는 주인공을 극복시켜줬는데, 난치병이 악화되어 사망. 죽을 당시 많은 시청자들이 충격에 빠졌다.",
+                "workName": "기묘한 이야기",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/기묘한이야기바바라.png" alt="바바라">
+                <a>기묘한 이야기 바바라 홀랜드</a>
+                <a class="engname">Stranger Things Barbara Holland</a>
+            </div>
+            <div class="character" id="bob" data-filter="murder" data-modal-content='{
+                "characterName": "밥 뉴비",
+                "deathType": "살해",
+                "deathReason": "팀원들을 구하고 살해당함",
+                "workName": "기묘한 이야기",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/워킹데드밥뉴비.png" alt="캐릭터 이미지">
+                <a>기묘한 이야기 밥 뉴비</a>
+                <a class="engname">Stranger Things Bob Newby</a>
+            </div>
+            <div class="character" id="werther" data-filter="suicide" data-modal-content='{
+                "characterName": "베르테르",
+                "deathType": "자살",
+                "deathReason": "팀원들을 구하고 살해당함",
+                "workName": "젊은 베르테르의 슬픔",
+                "releaseDate": "1774년 9월 29일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>젊은 베르테르의 슬픔 베르테르</a>
+                <a class="engname">The Sorrows of Young Werther Werther</a>
+            </div>
+            <div class="character" id="marco" data-filter="suicide" data-modal-content='{
+                "characterName": "마르코 보트",
+                "deathType": "자살",
+                "deathReason": "동료들에게 배신당하여 사망. 시청자들의 안타까움 유발",
+                "workName": "진격의 거인",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>진격의 거인 마르코 보트</a>
+                <a class="engname">-</a>
+            </div>
+            <div class="character" id="makimura" data-filter="murder" data-modal-content='{
+                "characterName": "마키무라 미키",
+                "deathType": "살해",
+                "deathReason": "악한 쪽으로 오해받는 주인공을 감싸는데, 주변인에게 미움을 받아 마을 사람들에게 죽임을 당한다. 죽은 후에도 시체를 전시당하는 둥 잔혹하게 사망",
+                "workName": "데빌맨 크라이베이비",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마키무라미키.png" alt="카와지리 마츠코">
+                <a>데빌맨 크라이베이비 마키무라 미키</a>
+                <a class="engname">-</a>
+            </div>
+            <div class="character" id="max" data-filter="murder" data-modal-content='{
+                "characterName": "맥스 메이필드",
+                "deathType": "살해",
+                "deathReason": "악한 쪽으로 오해받는 주인공을 감싸는데, 주변인에게 미움을 받아 마을 사람들에게 죽임을 당한다. 죽은 후에도 시체를 전시당하는 둥 잔혹하게 사망",
+                "workName": "기묘한 이야기",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>기묘한 이야기 맥스 메이필드</a>
+                <a class="engname">Stranger Things Max Mayfield</a>
+            </div>
+            <div class="character" id="merle" data-filter="murder" data-modal-content='{
+                "characterName": "멀 딕슨",
+                "deathType": "살해",
+                "deathReason": "악한 쪽으로 오해받는 주인공을 감싸는데, 주변인에게 미움을 받아 마을 사람들에게 죽임을 당한다. 죽은 후에도 시체를 전시당하는 둥 잔혹하게 사망",
+                "workName": "워킹 데드",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>워킹데드 멀 딕슨</a>
+                <a class="engname">Walking Dead Merle Dixon</a>
+            </div>
+            <div class="character" id="cedric" data-filter="murder" data-modal-content='{
+                "characterName": "세드릭 디고리",
+                "deathType": "살해",
+                "deathReason": "주인공과 같이 묘비에 끌려왔다는 이유로 악역에게 살해당함",
+                "workName": "해리 포터와 불의 잔",
+                "releaseDate": "2005년 12월 1일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>해리 포터와 불의 잔 세드릭 디고리</a>
+                <a class="engname">Harry Potter and the Goblet of Fire<br> Cedric Diggory</a>
+            </div>
+            <div class="character" id="sirius" data-filter="murder" data-modal-content='{
+                "characterName": "시리우스 블랙 3세",
+                "deathType": "살해",
+                "deathReason": "주인공과 같이 묘비에 끌려왔다는 이유로 악역에게 살해당함",
+                "workName": "해리 포터와 불사조 기사단",
+                "releaseDate": "2007년 7월 11일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>해리 포터와 불사조 기사단 시리우스 블랙 3세</a>
+                <a class="engname">Harry Potter and the Order of the Phoenix<br> Sirius Black III</a>
+            </div>
+        </div>
+
+
+
+        <div class="row-2">
+            <div class="character" id="busanhaeng" data-filter="suicide" data-modal-content='{
+                "characterName": "서석우",
+                "deathType": "자살",
+                "deathReason": "아빠 캐릭터인데, 자신이 좀비가 되는 것을 인지하고 딸에게 피해주지 않기위해 자살함.",
+                "workName": "부산행",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/서석우.svg" alt="서석우">
+                <a>부산행 서석우</a>
+                <a class="engname">Train to Busan Seo Seoku</a>
+            </div>
+            <div class="character" id="simson" data-filter="illness" data-modal-content='{
+                "characterName": "래리 더 바플라이",
+                "deathType": "병사",
+                "deathReason": "아빠 캐릭터인데, 자신이 좀비가 되는 것을 인지하고 딸에게 피해주지 않기위해 자살함.",
+                "workName": "부산행",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/서석우.svg" alt="카와지리 마츠코">
+                <a>심슨 래리 더 바플라이</a>
+                <a class="engname">Simpsons Larry the Barfly</a>
+            </div>
+            <div class="character" id="rengoku" data-filter="sacrifice" data-modal-content='{
+                "characterName": "렌고쿠 쿄쥬로",
+                "deathType": "희생사",
+                "deathReason": "자기 부하들을 지키려다 사망. 매우 강력한 적이 나타나서, 훗날 남은 부하들이 더 활약할 것을 기약하고 본인이 희생한다. ",
+                "workName": "귀멸의 칼날",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/서석우.svg" alt="렌고쿠">
+                <a>귀멸의 칼날 렌고쿠 쿄쥬로</a>
+                <a class="engname">Demon Slayer: Kimetsu no Yaiba<br> Kyojuro Rengoku</a>
+            </div>
+            <div class="character" id="rogun" data-filter="illness" data-modal-content='{
+                "characterName": "울버린",
+                "deathType": "병사",
+                "deathReason": "인기 많았던 엑스맨 시리즈가 주인공의 사망으로 끝남",
+                "workName": "로건",
+                "releaseDate": "2017년 2월 28일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>로건 울버린</a>
+                <a class="engname">Logan Wolverine</a>
+            </div>
+            <div class="character" id="merem" data-filter="murder" data-modal-content='{
+                "characterName": "메르엠",
+                "deathType": "사고사",
+                "deathReason": "-",
+                "workName": "헌터x헌터",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>헌터x헌터 메르엠</a>
+                <a class="engname">Stranger Things Meruem</a>
+            </div>
+            <div class="character" id="mupasa" data-filter="sacrifice" data-modal-content='{
+                "characterName": "무파사",
+                "deathType": "희생사",
+                "deathReason": "-",
+                "workName": "라이온킹",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="카와지리 마츠코">
+                <a>라이온킹 무파사</a>
+                <a class="engname">Stranger Things Meruem</a>
+            </div>
+            <div class="character" id="beth" data-filter="murder" data-modal-content='{
+                "characterName": "베스 그린",
+                "deathType": "살해",
+                "deathReason": "베스가 갑자기 돈을 가위로 찔러버리는 것도 깜짝 놀랄만한 상황인데, 돈이 반사적으로 베스의 머리를 쏴서 베스의 머리가 관통당하는 장면도 너무 갑작스러워 많은 시청자들을 놀라게 했다. 후에 릭이 말하기를 돈이 베스의 머리를 쏘고 난 후의 표정을 봤는데 베스를 죽이려는 의도는 전혀 없어보였다고. 한마디로 돈도 가위에 찔린 순간 자기도 모르게 방아쇠를 눌러버린 것.",
+                "workName": "워킹 데드",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>워킹데드 베스 그린</a>
+                <a class="engname">Walking Dead Beth Greene</a>
+            </div>
+            <div class="character" id="boromir" data-filter="murder" data-modal-content='{
+                "characterName": "보로미르",
+                "deathType": "살해",
+                "deathReason": "베스가 갑자기 돈을 가위로 찔러버리는 것도 깜짝 놀랄만한 상황인데, 돈이 반사적으로 베스의 머리를 쏴서 베스의 머리가 관통당하는 장면도 너무 갑작스러워 많은 시청자들을 놀라게 했다. 후에 릭이 말하기를 돈이 베스의 머리를 쏘고 난 후의 표정을 봤는데 베스를 죽이려는 의도는 전혀 없어보였다고. 한마디로 돈도 가위에 찔린 순간 자기도 모르게 방아쇠를 눌러버린 것.",
+                "workName": "반지의 제왕",
+                "releaseDate": "-",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>반지의 제왕 보로미르</a>
+                <a class="engname">Walking Dead Beth Greene</a>
+            </div>
+            <div class="character" id="brian" data-filter="actorDeath" data-modal-content='{
+                "characterName": "보로미르",
+                "deathType": "배우의 사망",
+                "deathReason": "분노의 질주 시리즈에서 브라이언을 연기하는 폴 워커가 교통사고로 사망하여 더 이상 출연이 불가능해진 상황으로 인해 브라이언 오코너의 하차가 불가피해진 상황이 되었고, 이번 시리즈는 폴의 죽음을 추모곡인 See You Again과 함께 애도하였다.",
+                "workName": "분노의 질주 더 세븐",
+                "releaseDate": "2015년 4월 1일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>분노의 질주 더 세븐 브라이언 오 코너</a>
+                <a class="engname">Furious 7 Brian O'Conner</a>
+            </div>
+            <div class="character" id="blackwi" data-filter="sacrifice" data-modal-content='{
+                "characterName": "블랙 위도우",
+                "deathType": "희생사",
+                "deathReason": "상대방을 위해 본인이 희생하는 안타까운 죽음. 다른캐릭터들은 시간을 되돌려서 다시 부활하나 이 캐릭터는 부활하지 않음",
+                "workName": "어벤져스 : 엔드게임 블랙 위도우",
+                "releaseDate": "2015년 4월 1일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>어벤져스 : 엔드게임 블랙 위도우</a>
+                <a class="engname">Avengers: Endgame Black Widow</a>
+            </div>
+            <div class="character" id="biryong" data-filter="murder" data-modal-content='{
+                "characterName": "비룡",
+                "deathType": "살해",
+                "deathReason": "전쟁에서 승리하고, 본인이 사랑하는 공주님 옆으로 가는 와중에 총에맞아 사망. ",
+                "workName": "짱구는 못말려 장엄한 전설의 전투",
+                "releaseDate": "2008년 6월 23일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>짱구는 못말려 장엄한 전설의 전투 비룡</a>
+                <a class="engname">嵐を呼ぶ アッパレ! 戦国大合戦<br> 井尻又兵衛由俊</a>
+            </div>
+            <div class="character" id="shasha" data-filter="sacrifice" data-modal-content='{
+                "characterName": "샤샤 브라우스",
+                "deathType": "살해",
+                "deathReason": "전쟁에서 승리하고, 본인이 사랑하는 공주님 옆으로 가는 와중에 총에맞아 사망. ",
+                "workName": "진격의 거인",
+                "releaseDate": "2015년 4월 1일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>진격의 거인 샤샤 브라우스</a>
+                <a class="engname">Attack on Titan Sasha Blouse</a>
+            </div>
+            <div class="character" id="sophia" data-filter="murder" data-modal-content='{
+                "characterName": "소피아 펠레티어",
+                "deathType": "살해",
+                "deathReason": "전쟁에서 승리하고, 본인이 사랑하는 공주님 옆으로 가는 와중에 총에맞아 사망. ",
+                "workName": "진격의 거인",
+                "releaseDate": "2015년 4월 1일",
+                "image": "imagge/마츠코modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/마츠코.svg" alt="캐릭터 이미지">
+                <a>워킹데드 소피아 펠레티어</a>
+                <a class="engname">Walking Dead Shopia Peletier</a>
+            </div>
+        </div>
+
+
+
+        <div class="row-3">
+            <div class="character" id="rori" data-filter="sacrifice" data-modal-content='{
+                "characterName": "로리",
+                "deathType": "희생사",
+                "deathReason": "가족을 어쩔 수 없이 죽여야 한다는 비극적 상황이 시청자들에게 슬픔을 안겨줌.",
+                "workName": "워킹데드",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>워킹데드 로리 그라임스</a>
+                <a class="engname">Walking Dead Lori Grimes</a>
+            </div>
+            <div class="character" id="ryusol" data-filter="murder" data-modal-content='{
+                "characterName": "류솔",
+                "deathType": "살해",
+                "deathReason": "가족을 어쩔 수 없이 죽여야 한다는 비극적 상황이 시청자들에게 슬픔을 안겨줌.",
+                "workName": "똑 닮은 딸",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>똑 닮은 딸 류솔</a>
+                <a class="engname">-</a>
+            </div>
+            <!-- <div class="character" id="ribai" data-filter="sacrifice" data-modal-content='{
+                "characterName": "리바이 반",
+                "deathType": "희생사",
+                "deathReason": "가족을 어쩔 수 없이 죽여야 한다는 비극적 상황이 시청자들에게 슬픔을 안겨줌.",
+                "workName": "진격의 거인",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>워킹데드 소피아 펠레티어</a>
+                <a class="engname">Walking Dead Shopia Peletier</a>
+            </div> -->
+            <div class="character" id="bingbong" data-filter="sacrifice" data-modal-content='{
+                "characterName": "빙봉",
+                "deathType": "희생사",
+                "deathReason": "기쁨은 마침내 매립지를 탈출하는데 성공하자 기뻐하며 빙봉을 찾지만 빙봉은 매립지 아래에서 기쁨의 성공을 축하하며 라일리를 구하라는 말과 함께 위의 대사를 남기며 소멸하고 결국 라일리의 기억에서 지워진다.",
+                "workName": "인사이드 아웃",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>인사이드 아웃 빙봉</a>
+                <a class="engname">Inside Out Bing Bong</a>
+            </div>
+            <div class="character" id="snape" data-filter="murder" data-modal-content='{
+                "characterName": "스네이프",
+                "deathType": "살해",
+                "deathReason": "호그와트 전투에서 죽게되며, 볼드모트가 죽임을 명령하여 그의 뱀인 나기니에 의해 살해된다. 스네이프는 죽기 전 해리에게 몇 가지 중요한 기억을 남기며, 이를 통해 해리는 스네이프가 자신의 부모와 얽힌 과거와 그동안 숨겨온 충성심을 알게 된다.",
+                "workName": "해리 포터와 죽음의 성물 2부",
+                "releaseDate": "2011년 7월 13일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>해리 포터와 죽음의 성물 2부<br> 세베루스 스네이프</a>
+                <a class="engname">Harry Potter and the Deathly Hallows<br>: Part 2 Severus Snape</a>
+            </div>
+            <div class="character" id="ironman" data-filter="sacrifice" data-modal-content='{
+                "characterName": "아이언맨",
+                "deathType": "희생사",
+                "deathReason": "영화 어벤져스: 엔드게임에서 아이언맨의 죽음은 이야기의 중요한 전환점이다. 그의 희생은 타노스와 그의 군대에 맞서 우주를 구하기 위한 결정적인 순간에 일어난다. 타노스가 모든 생명을 다시 소멸시키려 하자, 토니는 인피니티 건틀릿을 사용해 타노스와 그의 군대를 없애기 위해 손가락을 튕긴다. 그러나 일반적인 인간이 인피니티 스톤의 막대한 힘을 견디기 어렵기 때문에, 토니는 그 여파로 결국 목숨을 잃게 된다. 이 장면은 아이언맨의 희생정신을 보여주며, 마블 시네마틱 유니버스에서 그의 여정을 감동적으로 마무리 짓는다.",
+                "workName": "어벤져스 엔드게임",
+                "releaseDate": "2019년 4월 24일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>어벤져스 엔드게임 아이언멘</a>
+                <a class="engname">Avengers: Endgame Iron Man</a>
+            </div>
+            <div class="character" id="yeonwoo" data-filter="illness" data-modal-content='{
+                "characterName": "허연우",
+                "deathType": "병사",
+                "deathReason": " 세자빈으로 간택되어 조선의 왕비가 됐어야 했지만 혼례 전 정체불명의 병에 걸려 세자빈 자리에서 쫓겨난 후 병으로 숨을 거두었다.",
+                "workName": "해를 품은 달",
+                "releaseDate": "2012년 1월 4일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>해를 품은 달 허연우</a>
+                <a class="engname">Moon embracing the Sun Heo Yeonu</a>
+            </div>
+            <div class="character" id="uchiha" data-filter="illness" data-modal-content='{
+                "characterName": "우치하 이타치",
+                "deathType": "병사",
+                "deathReason": "우치하 이타치는 자신의 병과 신체적 한계로 인해 사스케와의 최후 결투에서 죽게 되었다. 그는 사스케가 강해지길 바랐으며, 자신의 악역 역할을 감수하며 사스케에게 복수를 위한 동기를 심어줬다. 마지막 전투 중 이타치는 자신의 한계를 넘어 싸우다가 병세가 악화되어 사스케 앞에서 결국 생을 마감하였다.",
+                "workName": "나루토",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>나루토 우치하 이타치</a>
+                <a class="engname">NARUTO Itachi Uchiha</a>
+            </div>
+            <div class="character" id="kuzyo" data-filter="sacrifice" data-modal-content='{
+                "characterName": "쿠죠 죠린",
+                "deathType": "희생사",
+                "deathReason": "적이 자신의 존재를 느끼고 추격하기에 소년을 도망치게 하기 위해 싸우다 사망. 주연들의 죽음으로 도망친 소년이 적을 쓰러뜨리는 장면이 압권.",
+                "workName": "죠죠의 기묘한 모험",
+                "releaseDate": "2016. 7. 20",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>죠죠의 기묘한 모험 쿠죠 죠린</a>
+                <a class="engname">Jojo's Bizarre Adventure Jolyne Cujoh</a>
+            </div>
+            <div class="character" id="gleepin" data-filter="actorDeath" data-modal-content='{
+                "characterName": "핀 크리스토퍼 허드슨",
+                "deathType": "배우의 사망",
+                "deathReason": "핀 허드슨을 연기한 배우 코리 몬티스는 2013년 7월 캐나다 밴쿠버에서 호텔 방에서 혼자 있다가 사망했으며, 원인은 헤로인과 알코올의 혼합으로 인한 약물 중독으로 밝혀졌다. 몬티스는 10대 시절부터 중독 문제로 어려움을 겪어 왔고, 몇 차례 재활 치료를 받았으나 결국 이를 극복하지 못했다. 당시 31세였던 그는 "글리"에서 핀 허드슨으로 큰 사랑을 받았고, 팬들과 동료들에게 많은 애도를 받았다.",
+                "workName": "글리",
+                "releaseDate": "2013년 7월 13일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>글리 핀 크리스토퍼 허드슨</a>
+                <a class="engname">Glee Finn Christopher Hudson</a>
+            </div>
+            <div class="character" id="kimhyena" data-filter="suicide" data-modal-content='{
+                "characterName": "김혜나",
+                "deathType": "자살인지 타살인지 명확하지 않다.",
+                "deathReason": "우주의 19살 생일 파티에 참석해 발코니로 잠깐 바람을 쐬러 나왔다가 갑자기 발코니에서 추락했다. 자살인지 타살인지 명확하지 않다.",
+                "workName": "스카이 캐슬",
+                "releaseDate": "2018년 11월 23일",
+                "image": "imagge/서석우modal.svg",
+                "comments": [],
+                "likes": 0
+            }'>
+                <img src="imagge/로건@4x.png" alt="로건">
+                <a>스카이 캐슬 김혜나</a>
+                <a class="engname">Sky Castle Kim Hyena</a>
+            </div> 
+        </div>
+
+<!-- 
+        <div class="row-4"> -->
+        
+           
+        <!-- </div> -->
+    
+
+        
+    </div>
+ </div>
+            
+            
+            <!-- 팝업모달 -->
+        <div id="characterModal" class="modal">
+            <button class="close-modal-btn" id="closeModalBtn2">&times;</button>
+            <div class="modal-content">
+                <div class="content-container">
+                    <!-- 캐릭터 정보 -->
+                    <div class="character-info">
+                        <img src="" alt="캐릭터 이미지" id="modalCharacterImage">
+                        <h1 id="modalCharacterName"></h1>
+                        <!-- 통합된 정보 섹션 -->
+                        <div class="combined-info">
+                            <div class="info-item">
+                                <div class="info-label">사망 유형</div>
+                                <div id="modaldeathType"></div>
+                            </div>
+                            <hr>
+                            <div class="info-item">
+                                <div class="info-label">작품명</div>
+                                <div id="modalWorkName"></div>
+                            </div>
+                            <hr>
+                            <div class="info-item">
+                                <div class="info-label">공개일</div>
+                                <div id="modalReleaseDate"></div>
+                            </div>
+                            <hr>
+                            <div class="info-item" id="death-reason">
+                                <div class="info-label">사망 이유</div>
+                                <button id="toggleBlurButton">눌러서 확인하기</button>
+                            </div>
+                            <div id="modaldeathReason" class="blur left-text"></div>
+                        </div>
+                    </div>
+                    <hr class="seperate">
+                    <!-- 좋아요 기능 -->
+                    <div class="modalLikes">
+                        <button id="likeButton">
+                            <img src="imagge/헌화버튼.svg" alt="헌화버튼">
+                            <p id="modalLikes"></p>
+                        </button>
+                    </div>
+                    <!-- 댓글 -->
+                    <div class="comment-container">
+                        <img src="imagge/마름모.svg" alt="마름모">
+                        <p class="center-text">추모 댓글 남기기</p>
+                        <input type="text" id="commenterName" placeholder="닉네임" />
+                        <textarea id="commentContent" placeholder="추모댓글을 입력해주세요."></textarea>
+                        <button id="addCommentButton">댓글 남기기</button>
+                        <div id="modalComments"></div>
+                    </div>
+                </div>
+                
+            </div>                
+        </div>
+        <!-- 프린트 버튼 -->
+        <!-- <button id="printButton" class="print-button hidden">
+            <img src="imagge/프린트버튼.svg" alt="프린트버튼">
+        </button> -->
+
+        <!-- </section> -->
+    </main>
+         <!-- test -->
+         <!-- <div class="custom-cursor">
+            <div class="inner-circle"></div>
+        </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+</body>

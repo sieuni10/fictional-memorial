@@ -1,0 +1,844 @@
+html {
+    font-family: 'Noto Sans KR', 'Andale Mono', "english-grotesque",sans-serif;
+    word-break: keep-all;
+}
+*{
+    box-sizing:border-box;
+    /* cursor: none !important; */
+  }
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color:#FFF;
+}
+
+body {
+    overflow-y: scroll; /* 수평 스크롤 활성화 */
+    overflow-x: hidden; /* 세로 스크롤 비활성화 */
+    background-image: url('imagge/새배경.png'); /* 배경 이미지 경로 */
+    background-size: cover; /* 요소를 꽉 채우도록 설정 */
+    background-position: center; /* 배경 이미지의 위치를 가운데로 */
+    background-attachment: fixed; /* 스크롤 시 배경 고정 */
+    /* cursor: none; */
+}
+/* .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    z-index: -1; 
+  } */
+/* header */
+header {
+    display: flex;
+    border-bottom: 1px solid #FFF;
+    justify-content: space-between;
+    font-family: 'Andale Mono';
+    align-items: center;
+    padding: 0.9rem 5rem;
+    font-size: 1.25rem;
+    margin:0 auto;
+    width:80rem;
+}
+
+.menu button{
+    position: relative;
+    flex-basis: 14rem;
+    text-align: center;
+    background: none;
+    border: none;
+    color: white; /* 기본 상태에서 흰색 글씨 */
+    font-family: 'Andale Mono';
+    font-size: 1.25rem;
+    transition: color 300ms ease-in-out; 
+    height: 2.2rem;
+    width: 14rem;
+    margin-left:3rem;
+    cursor: pointer;
+}
+
+header button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: white;
+    transition: height 300ms ease-in-out, opacity 300ms ease-in-out; 
+    z-index: -1;
+    opacity: 0;
+}
+
+header button:hover::before {
+    height: 100%; 
+    opacity: 1; 
+}
+
+header button:hover {
+    color: black; /* 배경이 흰색으로 변할 때 글자색을 검정으로 변경 */
+}
+
+button:disabled {
+    background-color: #FFF;
+    color: #000;
+    height: 2.2rem;
+    z-index: 0;
+}
+
+button:disabled:hover {
+    background-color: #FFF; /* 호버 시에도 배경색이 변하지 않도록 */
+    color: #000; /* 글씨가 검정색으로 유지되도록 설정 */
+    height: 2.2rem; /* 호버 시 크기도 변하지 않도록 */
+}
+header img{
+    margin-left: 2.1rem;
+}
+/* main */
+main{
+}
+.nav{
+    background: rgba(223,227,221,0.8);
+    color:#000;
+    border:1px solid #b1b1b1;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 25.7px 2px rgba(0,0,0,0.25);
+    width:12rem;
+    backdrop-filter: blur(16.350000381469727px);
+    height: fit-content;
+    margin:1.5rem;
+    position: sticky;
+    top:1.5rem;
+}
+.grid-container {
+    display: grid;
+    margin: 0 auto;
+    height: auto; 
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    break-inside: avoid;
+    margin-top: 1rem;
+    grid-auto-flow: dense;
+}
+.grid-container img {
+    width: 100%; /* 이미지가 그리드 칸에 맞게 조절됨 */
+    height: auto;
+}
+.column {
+    flex: 1; /* 두 열이 같은 높이로 나눠짐 */
+    padding: 1rem;
+    margin-bottom: 1rem; /* 열 사이에 간격 */
+}
+.horizontal-line {
+    width: 100%; 
+    border: 0.5px solid #A8B0A5;
+    margin: 0.5rem 0;
+}
+
+.nav-bottom{
+    display: flex;
+    flex-direction: column;
+    padding:0.4rem;
+}
+.nav-bottom p, .filter-button p{
+    margin: 0.1rem 0;
+    letter-spacing: -0.03rem;
+    color: #262726;
+    padding: 0.2rem 0.5rem;
+}
+
+/* 호버 효과 */
+.filter-button:hover p {
+    background-color: #77B558;
+    color: white;
+    border-radius: 0.3125rem;
+}
+.nav-contentsgrid{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    width:80rem;
+    margin: 0 auto;
+}
+/* active 클래스 추가 시 스타일 */
+.filter-button.active p {
+    background-color: #77B558;
+    color: white;
+    border-radius: 0.3125rem;
+}
+.filter-button{
+    background: none;
+    border:none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+
+}
+/* 그리드 비율 설정 */
+
+/* 커서test */
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+.custom-cursor {
+    position: fixed;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 4px solid var(--color-white);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    mix-blend-mode: difference;
+    overflow: hidden;
+    z-index: 100000;
+    transition: background-color 0.15s ease-in-out, 
+                transform 0.04s ease-out, 
+                opacity 0.2s ease;
+    pointer-events: none;
+    transform: scale(1);
+}
+
+.inner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 1rem;
+    height: 1rem;
+    border: 4px solid var(--color-white);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    opacity: 0;
+    transition: transform 0.2s ease-out;
+}
+::selection {
+    background-color: #FFF; 
+    color: #FF2171; 
+}
+/* 모달팝업 */
+
+/* 모달 기본 스타일 */
+.characters {
+    position: relative; /* 모달을 기준으로 하는 부모 요소 */
+    max-width: 100%;
+    /* display: grid;
+    grid-template:1fr 1fr 1fr/1fr 1fr 1fr 1fr ;
+    justify-items: center;
+    align-items: center;
+    gap:0.3rem; */
+    height: 100%; /* 자동 높이 설정 */
+    max-height: 100%; /* nav의 높이에 맞춰서 제한 */
+    overflow-y: auto; /* 상하 스크롤 */
+    overflow-x: hidden; /* 좌우 스크롤 비활성화 */
+}
+.characters::-webkit-scrollbar {
+    display: none; /* 스크롤바 숨기기 */
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 57%;
+    bottom:0;
+    transform: translateX(-50%) translateY(100%);
+    width: 50rem;
+    /* height: 82%; */
+    z-index: 1000;
+    opacity: 0; /* 초기 투명도 설정 */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* 애니메이션 추가 */
+    top: 7rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 그림자 */
+    backdrop-filter: blur(20px);
+}
+
+.modal.show {
+    transform: translateX(-50%) translateY(0); /* 모달이 제자리로 올라옴 */
+    opacity: 1; /* 모달이 보임 */
+}
+/* 모달이 열리면 스크롤을 비활성화하기 위한 클래스 */
+.modal-open {
+    overflow: hidden; /* 스크롤을 비활성화 */
+}
+
+/* 모달 창 뒷 배경의 pointer-events를 설정하여 클릭 방지 */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* 모달보다 위에 있도록 설정 */
+    display: none; /* 기본적으로 숨김 */
+    pointer-events: none; /* 클릭 방지 */
+}
+
+.modal-backdrop.show {
+    display: block; /* 모달이 열릴 때 보이도록 설정 */
+    pointer-events: auto; /* 클릭 가능 */
+}
+
+.modal-content {
+    background:rgba(0,0,0, 0.7);
+    padding: 3rem 1.5rem 1rem;
+    width: 100%;
+    height:100%;
+    border:1px solid;
+    overflow-y: auto; /* 스크롤 추가 */
+    margin:0 auto;
+    position: relative; /* 위치 조정 */
+    overflow-x: hidden;
+    z-index:1;
+    overscroll-behavior: contain;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 0; /* 스크롤바 너비를 0으로 설정 */
+    height: 0; /* 수평 스크롤바 높이도 0으로 설정 */
+    background: transparent; /* 배경을 투명하게 설정 */
+}
+.modal-content > * {
+    position: relative;
+    z-index: 2; /* 배경 이미지보다 위에 위치하도록 설정 */
+}
+.modal-section{
+    margin-bottom: 2rem;
+}
+.character-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+/* 캐릭터 이미지 기본 스타일 */
+.character img {
+    cursor: pointer;
+    display: block;
+    flex-shrink: 1;
+}
+
+.character{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+/* 기본 상태에서 첫 번째 텍스트 (한국어) 보임 */
+.character a {
+    background-color: black; /* 텍스트 배경 */
+    color: #FFF;
+    display: inline-block; /* 글자 크기만큼 배경 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width:fit-content;
+    position: absolute;
+    bottom:3rem;
+    left:1.5rem;
+}
+#guido a{
+    bottom:2rem;
+    left:1rem;
+}
+#biryong a{
+    bottom:1.5rem;
+    left:1rem;
+}
+.character a.engname {
+    display: none; /* 영어 이름은 기본적으로 숨김 */
+}
+.character:hover a {
+    display: none;
+}
+
+.character:hover a.engname{
+    background-color: black; /* 텍스트 배경 */
+    color: #FFF;
+    display: inline-block; /* 글자 크기만큼 배경 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width:fit-content;
+}
+.blank{
+    height: 20rem;
+    background-color: rgba(0,0,0,0);
+}
+
+/* ====== 이미지 등록 ====== */
+#guido img {
+    content: url('imagge/귀도.png');
+}
+
+#guido:hover img {
+    content: url('imagge/귀도호버.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#matsuko img {
+    content: url('imagge/마츠코.png');
+}
+#matsuko:hover img {
+    content: url('imagge/마츠코hover.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#busanhaeng img {
+    content: url('imagge/서석우.png');
+}
+#busanhaeng:hover img {
+    content: url('imagge/서석우텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#simson img {
+    content: url('imagge/심슨.png');
+}
+#simson:hover img {
+    content: url('imagge/심슨텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#dars img {
+    content: url('imagge/다스베이더@4x.png');
+}
+#dars:hover img {
+    content: url('imagge/다스베이더텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#rengoku img {
+    content: url('imagge/렌고쿠@4x.png');
+}
+#rengoku:hover img {
+    content: url('imagge/렌고쿠텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#rogun img {
+    content: url('imagge/로건@4x.png');
+}
+#rogun:hover img {
+    content: url('imagge/로건텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#rori img {
+    content: url('imagge/로리@4x.png');
+}
+#rori:hover img {
+    content: url('imagge/로리텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#ryusol img {
+    content: url('imagge/류솔.png');
+}
+#ryusol:hover img {
+    content: url('imagge/류솔텍.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#ribai img {
+    content: url('imagge/리바이.png');
+}
+#ribai:hover img {
+    content: url('imagge/리바이텍.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#bingbong img {
+    content: url('imagge/빙봉.png');
+}
+#bingbong:hover img {
+    content: url('imagge/빙봉텍.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#snape img {
+    content: url('imagge/스네이프@4x.png');
+}
+#snape:hover img {
+    content: url('imagge/스네이프텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#ironman img {
+    content: url('imagge/아이언맨.png');
+}
+#ironman:hover img {
+    content: url('imagge/아이언맨텍.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#yeonwoo img {
+    content: url('imagge/연우@4x.png');
+}
+#yeonwoo:hover img {
+    content: url('imagge/연우텍스트.png'); /* 호버 시 바뀔 이미지 경로 */
+}
+#uchiha img {
+    content: url('imagge/우치하이타치.png');
+}
+#uchiha:hover img {
+    content: url('imagge/우치하이타치텍.png');
+}
+#kuzyo img {
+    content: url('imagge/쿠죠죠린.png');
+}
+#kuzyo:hover img {
+    content: url('imagge/쿠죠죠린텍.png'); 
+}
+#gleepin img {
+    content: url('imagge/핀@4x.png');
+}
+#gleepin:hover img {
+    content: url('imagge/핀텍스트.png'); 
+}
+#kimhyena img {
+    content: url('imagge/혜나.png');
+}
+#kimhyena:hover img {
+    content: url('imagge/혜나텍.png'); 
+}
+#miyazono img {
+    content: url('imagge/4너것미야조노카오리.png');
+}
+#miyazono:hover img {
+    content: url('imagge/4너것미야조노카오리호버.png'); 
+}
+#babara img {
+    content: url('imagge/기묘한이야기바바라.png');
+}
+#babra:hover img {
+    content: url('imagge/기묘한이야기바바라호버.png'); 
+}
+#werther img {
+    content: url('imagge/베르테르.png');
+}
+#werther:hover img {
+    content: url('imagge/베르테르호버.png'); 
+}
+#marco img{
+    content:url('imagge/진격마르코보트.png')
+}
+#marco:hover img {
+    content: url('imagge/마르코보트호버.png'); 
+}
+#mmakimura img{
+    content:url('imagge/마키무라미키.png')
+}
+#makimura:hover img {
+    content: url('imagge/마키무라미키호버.png'); 
+}
+#max img{
+    content:url('imagge/기묘한이야기맥스.png')
+}
+#max:hover img {
+    content: url('imagge/기묘한이야기맥스호버.png'); 
+}
+#merle img{
+    content:url('imagge/워킹데드멀딕슨.png')
+}
+#merle:hover img {
+    content: url('imagge/워킹데드멀딕슨호버.png'); 
+}
+#bob img{
+    content:url('imagge/워킹데드밥뉴비.png')
+}
+#bob:hover img {
+    content:url('imagge/워킹데드밥뉴비호버.png')
+}
+#merem img{
+    content:url('imagge/헌헌메르엠.png')
+}
+#merem:hover img {
+    content: url('imagge/헌헌메르엠호버.png'); 
+}
+#mupasa img{
+    content:url('imagge/라이온킹무파사.png')
+}
+#mupasa:hover img {
+    content: url('imagge/라이온킹무파사호버.png'); 
+}
+#beth img{
+    content:url('imagge/워킹데드베스.png')
+}
+#beth:hover img {
+    content: url('imagge/워킹데드베스호버.png'); 
+}
+#boromir img{
+    content:url('imagge/반제보로미르.png')
+}
+#boromir:hover img {
+    content: url('imagge/반제보로미르호버.png'); 
+}
+#brian img{
+    content:url('imagge/브라이언오코너.png')
+}
+#brian:hover img {
+    content: url('imagge/브라이언오코너호버.png'); 
+}
+#blackwi img{
+    content:url('imagge/블랙위도우.png')
+}
+#blackwi:hover img {
+    content: url('imagge/블랙위도우호버.png'); 
+}
+#biryong img{
+    content:url('imagge/짱구비룡.png')
+}
+#biryong:hover img {
+    content: url('imagge/짱구비룡호버.png'); 
+}
+#shasha img{
+    content:url('imagge/샤샤브라우스.png')
+}
+#shasha:hover img {
+    content: url('imagge/샤샤브라우스호버.png'); 
+}
+#cedric img{
+    content:url('imagge/세드릭디고리.png')
+}
+#cedric:hover img {
+    content: url('imagge/세드릭디고리호버.png'); 
+}
+#sirius img{
+    content:url('imagge/해리포터시리우스.png')
+}
+#sirius:hover img {
+    content: url('imagge/해리포터시리우스호버.png'); 
+}
+#sophia img{
+    content:url('imagge/워킹데드소피아.png')
+}
+#sophia:hover img {
+    content: url('imagge/워킹데드소피아호버.png'); 
+}
+
+.close-modal-btn{
+    position: absolute; /* 스크롤 고정 */
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #FFF;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1100;
+}
+.content-container {
+    overflow-y: auto; /* 스크롤 추가 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text-columns {
+    display: flex;
+    justify-content: center; /* 칼럼들을 수평 중앙에 배치 */
+    gap: 3.25rem; /* 칼럼 사이의 간격 */
+    padding: 2rem 0;
+    width:100%;
+    height:30rem;
+    margin:0 auto;
+    position: relative;
+    z-index: 1; /* 배경 이미지보다 위에 표시되도록 설정 */
+}
+
+.text-columns .column {
+    flex: 1; /* 각 칼럼이 동일한 너비를 가지도록 설정 */
+    overflow-y: scroll; /* 텍스트가 넘칠 때 스크롤 가능하게 설정 */
+    padding: 0 0.6rem;
+    text-align: center;
+    height: 100%;
+    line-height: 1.93rem;
+}
+.combined-info {
+    display: flex;
+    flex-direction: column; /* 위아래로 정렬 */
+    margin-bottom: 20px; /* 하단 간격 */
+    width: 35rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between; /* 좌우 정렬 */
+    align-items: center;
+}
+/* 사망이유 */
+#death-reason{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#toggleBlurButton{
+    background-color: rgba(255,255,255,0.5);
+    border:none;
+    border-radius: 99px;
+    padding: 0.4rem 0.7rem 0.3rem;
+    color:#FFF;
+}
+#modaldeathReason{
+    margin:1.2rem 0 0.3rem;
+    line-height: 1.6rem;
+}
+.left-text{
+    text-align: left;
+    flex: 2;
+    font-weight: 100;
+}
+.info-label {
+    font-weight: 400;
+    flex: 1;
+}
+
+#modaldeathType, #modalWorkName, #modalReleaseDate {
+    flex: 2;
+    text-align: right;
+    font-weight: 100;
+}
+/* 블러 처리 클래스 */
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+hr {
+    width: 100%; /* hr 선이 전체를 차지하도록 */
+    margin: 10px 0; /* hr 선의 상하 간격 */
+    border: 0.25px solid #FFF; /* 선 색상 */
+}
+.seperate{
+    border: 0.25px dashed rgba(255,255,255,0.5);
+    margin: 3rem 0 4rem;
+}
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    width:35rem;
+    text-align: center;
+}
+.comment-container img{
+    width:1rem;
+    margin: 0 auto;
+}
+#modalComments{
+    text-align: left;
+    margin-bottom: 0rem;
+}
+.center-text{
+    text-align: center;
+}
+/* 헌화버튼 */
+#likeButton{
+    border:none;
+    background: none;
+    margin-bottom: 2rem;
+}
+/* 헌화버튼 컨테이너 */
+.modalLikes {
+    position: relative;
+    display: inline-block;
+}
+
+/* 헌화버튼 */
+.likeButton {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* 버튼의 이미지 스타일 */
+.likeButton img {
+    display: block;
+    width: 100%; /* 필요한 경우 크기 조정 */
+    height: auto;
+}
+
+/* 숫자 텍스트 스타일 */
+#modalLikes {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff; /* 텍스트 색상 */
+    font-size: 1rem; /* 텍스트 크기 */
+    font-family: 'english-grotesque'; /* 원하는 폰트 */
+    margin: 0; /* 여백 제거 */
+}
+/* 댓글칸 */
+input, textarea{
+    border-radius: 0.3rem;
+    border: none;
+    display: block;
+    background-color: rgba(217,217,217,0.5);
+    line-height: 24px;
+    margin: 8px 0;
+    padding: 16px 24px;
+    width: 100%;
+    color:#FFF;
+  }
+
+  input:focus ,textarea:focus{
+    border-bottom:1px solid #FFF;
+    outline:none;
+  }
+
+  .comment-container button {
+    background: #FFF;
+    border: none;
+    border-radius: 2.6rem;
+    color: #000;
+    display: block;
+    font-weight: 700;
+    margin: 2rem auto;
+    padding: 0.7rem;
+    width: 10rem;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #FFF; 
+    opacity: 1; 
+  }
+/* 댓글 목록 스타일 */
+#modalComments {
+    margin-top: 1rem; /* 댓글 리스트 상단의 간격 */
+}
+
+#modalComments .comment {
+    margin-bottom: 2rem; /* 각 댓글 사이의 간격 */
+    padding: 0;
+    color: #FFF;
+    text-align: left; /* 왼쪽 정렬 */
+}
+
+.comment strong {
+    font-weight: 400;
+    color: #FFF;
+}
+
+.comment .comment-date {
+    font-weight: 100;
+    color: #B0B0B0;
+    margin: 0.5rem 0; /* 날짜와 댓글 내용 사이의 간격 */
+}
+
+.comment .comment-content {
+    font-weight: 200;
+    color: #FFF;
+    margin: 0;
+}
+.comment-name{
+    margin: 0;
+}
+/* 프린트 버튼 */
+.print-button {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* 기본적으로 숨김 */
+    animation: rotate 10s linear infinite;
+    width:10rem;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.print-btn{
+    width:12rem;
+    height: fit-content;
+    margin:1.5rem;
+    position: sticky;
+    top:19.5rem;
+    animation: rotate 10s linear infinite;
+    backdrop-filter: blur(16.350000381469727px);
+    border-radius: 100%;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.print-btn img{
+    width:12rem;
+    height:12rem;
+}
+
+.print-button.hidden {
+    display: none;
+}
+
+.print-button.show {
+    display: block; /* 모달이 열릴 때만 보이게 */
+}

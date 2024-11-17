@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>픽셔널 메모리얼</title>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ikr4lwe.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/favicon.ico">
+</head>    
+<body>
+  <section class="background">
+    <video src="세번째렌더링.mp4" class="bg" autoplay loop muted></video>
+    <img id="left" src="image/왼쪽.svg" alt="Left Image">
+    <img id="right" src="image/오른쪽.svg" alt="right Image">
+    
+    <div class="image-container" id="flower-left">
+      <img src="image/국왼2.png" alt="Project-Goal" class="default-img">
+      <img src="image/국왼호버.png" alt="Project-Goal Hover" class="hover-img">
+  </div>
+  
+  <div class="image-container" id="flower-right">
+      <img src="image/국오.png" alt="How-to-use?" class="default-img">
+      <img src="image/국오호버.png" alt="How-to-use Hover" class="hover-img">
+  </div>
+  
+  <div class="image-container" id="building">
+      <a href="memorial-main-page/memorial-main.html">
+          <img src="image/건물.png" alt="memorial" class="default-img">
+          <img src="image/입장.svg" alt="memorial Hover" class="hover-img">
+      </a>
+  </div>
+    
+    <!-- 프로젝트 골 모달 팝업 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="goal-container">
+          <div class="modal-top">
+            <h1 class="goal-title">
+              <img src="image/circle.svg" alt="circle">Our Memorial
+            </h1>
+            <button class="close-modal-btn" id="closeModalBtn1">&times;</button>
+          </div>
+          <div class="goal-content">
+            <div class="deco">
+              <img class="decot" src="image/장식이.svg" alt="decorate">
+              <div class="text-columns">
+                  <div class="column">
+                      <p>영화나 드라마, 애니메이션을 보며 죽은 캐릭터에게 안타까운 감정을 느낀 적이 있으신가요?<br><br>
+                        사람들은 때때로 자신이 만들어낸 이야기 속 가상의 인물들을 현실 속 존재처럼 인식하기도 합니다. 그러나 가상 세계의 사건과 인물들은 현실 세계에서 일어나는 사건들에 가려져 쉽게 잊히곤 합니다.<br><br>
+                        현실 세계에서 일어난 불운한 사건들은 마땅히 메모리얼로 추모받아야 하지만, 가상 인물들은 추모받을 수 없는 존재일까요?<br><br>
+                        저희 픽셔널 메모리얼 파크는 미디어 속 캐릭터들의 안타까운 죽음에서 출발하여, ‘캐릭터들의 추모공원’이라는 컨셉을 설정했습니다. 가상 세계 속 가상 인물들의 죽음을 추모할 수 있는 공간(공원)을 준비하였습니다.</p>
+                  </div>
+                  <div class="column">
+                      <p>Have you ever felt sorrow for a character's death while watching a movie, drama, or animation?<br><br>
+                        People sometimes perceive fictional characters in stories as if they were real. However, events and characters in the virtual world are often overshadowed and forgotten by those in the real world.<br><br>
+                        While tragic events in the real world are rightly commemorated with memorials, do virtual characters not deserve to be remembered as well?<br><br>
+                        Our Fictional Memorial Park starts from the concept of mourning the tragic deaths of characters in media by creating a "Memorial Park for Characters." We have prepared a space (park) where people can remember and honor the deaths of fictional characters in a virtual world.</p>
+                  </div>
+              </div>
+          </div>
+          <img class="decob" src="image/장식이.svg" alt="decorate">
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- 2번째 모달 -->
+<div id="modal-right" class="modal">
+  <div class="modal-content">
+    <div class="goal-container">
+      <div class="modal-top">
+        <h1 class="goal-title">
+          <img src="image/circle.svg" alt="circle">How to use?
+        </h1>
+        <button class="close-modal-btn" id="closeModalBtn2">&times;</button>
+      </div>
+      <div class="goal-content">
+        <div class="deco">
+          <img class="decot" src="image/장식이.svg" alt="decorate">
+          <div class="text-columns">
+            <div class="column">
+              <ul style="padding:0;">
+                <li>저희 메모리얼 파크는 캐릭터의 사인（死因）을 5가지로 분류하였습니다.</li>
+                <div class="death-container">
+                  <img src="image/자살.svg" alt="자살">
+                  <img src="image/희생사.svg" alt="희생사">
+                  <img src="image/살해.svg" alt="살해">
+                  <img src="image/병사.svg" alt="병사">
+                  <img src="image/배우의사망.svg" alt="배우의-사망">
+                </div>
+                <li>캐릭터 리스트 정렬은 이미지별, 텍스트별로 전환 가능합니다.</li>
+                <div class="death-container">
+                  <img src="image/이미지별.svg" alt="이미지-정렬">
+                  <img src="image/텍스트별.svg" alt="텍스트-정렬">
+                </div>
+                <li>캐릭터를 애도하는 마음을 담아 헌화하기 버튼을 눌러주세요.</li>
+                <div class="add-flower-container">
+                  <!-- 흐린 배경 -->
+                  <div class="blur-background"></div>
+                  <!-- 버튼 내용 (이미지와 텍스트) -->
+                  <button class="flower-button">
+                      <img src="image/헌화버튼.svg" alt="헌화버튼">
+                      <p class="flower-text">0</p>
+                  </button>
+              </div>
+                <li>캐릭터에 대한 추모 댓글을 남길 수 있습니다.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <img class="decob" src="image/장식이.svg" alt="decorate">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div id="discription-modal" class="discription-modal">
+  <div class="popup-content">
+      <div class="images">
+        <img id="left" src="image/왼쪽.svg" alt="Left Image">
+        <img id="right" src="image/오른쪽.svg" alt="right Image">
+      </div>
+      <div class="text">
+        <p id="omt">Our memorial<br>프로젝트 설명</p>
+        <p id="mt">Memorial<br>메인 페이지로 이동</p>
+        <p id="htut">How to use?<br>웹 사이트 이용방법</p>
+      </div>
+      <div class="btn">
+        <button id="closeBtn">확인</button>
+        <button id="hideForDayBtn">하루 동안 안 보기</button>
+      </div>
+  </div>
+</div>
+<button id="showPopup" class="show-popup-btn">?</button> -->
+  </section>
+  <!-- <div class="custom-cursor">
+    <div class="inner-circle"></div>
+</div> -->
+  <script src="script.js"></script>
+</body>
